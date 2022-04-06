@@ -26,7 +26,7 @@ class SchemaClient:
         """
         return json.loads(self.get_schema_str(schema_id))
 
-    def get_avro_schema(self, schema_id: int) -> str:
+    def get_avro_schema(self, schema_id: int) -> dict:
         """
             Returns a parsed avro schema
         :param schema_id:  ID of the schema
