@@ -34,7 +34,7 @@ class SchemaClient:
         """
         return parse_schema(self.get_schema_dict(schema_id))
 
-    def get_latest_avro_schema_by_topic(self, topic: str) -> Tuple[int, str]:
+    def get_latest_avro_schema_by_topic(self, topic: str) -> Tuple[int, dict]:
         """
             Gets schema id and avro schema
         :param topic: Name of the topic
