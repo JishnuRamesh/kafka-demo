@@ -20,7 +20,7 @@ class KafkaConsumer:
         self,
         schema_client: SchemaClient,
         topics: List[str],
-        consumer_conf : Dict[str],
+        consumer_conf: Dict[str],
         exception_handler: Callable,
         msg_processor: Callable,
     ):
