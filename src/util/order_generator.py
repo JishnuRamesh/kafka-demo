@@ -13,7 +13,7 @@ class RandomOrderGenerator:
     def __iter__(self) -> Order:
         for _ in range(self._orders_required):
             customer = Customer(self._faker.name(), self._faker.email(),
-                                self._faker.address(), self._faker.credit_card_number())
+                                self._faker.address())
             yield Order(customer,
                         random.randint(10000, 1000000),
                         self._faker.date_this_month(),

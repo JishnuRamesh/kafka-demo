@@ -1,0 +1,48 @@
+{
+  "name": "orders",
+  "namespace": "com.jr.demo.kafka.orders",
+  "doc": "Describes customer order",
+  "type": "record",
+  "fields": [
+    {
+      "name": "customer_id",
+      "doc": "UUID of customer",
+      "type": "string"
+    },
+    {
+      "name": "customer_name",
+      "doc": "Name of customer",
+      "type": "string"
+    },
+    {
+      "name": "customer_email",
+      "doc": "Email of customer",
+      "type": "string"
+    },
+    {
+      "name": "customer_address",
+      "doc": "Address of customer",
+      "type": "string"
+    },
+    {
+      "name": "order_number",
+      "doc": "ID of the order",
+      "type": "int"
+    },
+    {
+      "name": "date_of_delivery",
+      "doc": "Date of order delivery",
+      "type": "string"
+    },
+    {
+      "name": "price",
+      "doc": "Date of order delivery",
+      "type": "float"
+    },
+    {
+      "name": "currency",
+      "doc": "Currency in which order is paid for",
+      "type": "string"
+    }
+  ]
+}
