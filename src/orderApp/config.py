@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 
 class Config:
@@ -7,6 +7,7 @@ class Config:
         self._registry_url = "http://localhost:8081"
         self._kafka_url = "http://localhost:9092"
         self._topic_mapper = {"orders": "rawevents.orders.v1"}
+        self._consumer_group_id = "order_app_consumer_group"
 
     def get_schema_registry_config(self) -> Dict[str, str]:
         """
@@ -31,3 +32,22 @@ class Config:
         :return: Name of the avro schema
         """
         return self._topic_mapper[topic]
+
+    def get_topics(self):
+        """
+            Return list of topics supported
+        :return: List of topics
+        """
+        return self._topic_mapper.keys()
+
+    def get_consumer_kafka_conf(self) -> Dict[str, str]:
+        """
+            Get configuration for Kafka Consumer
+        :return: Dictionary of Kafka configuration for consumer
+        """
+        return {
+            "bootstrap.servers": self._kafka_url,
+            "group.id": self._consumer_group_id,
+            "enable.auto.commit": "false",
+            "auto.offset.reset": "earliest",
+        }
