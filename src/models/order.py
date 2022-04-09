@@ -13,9 +13,18 @@ class Order:
         self._currency = currency
 
     def as_dict(self) -> Dict[str, Union[str, float, int]]:
+        """
+        :return:  Returns Order object as dict
+        """
         return {**self._customer.as_dict(),
                 "order_number": self._order_number,
                 "date_od_delivery": str(self._date_of_delivery),
                 "price": self._price,
                 "currency": self._currency
                 }
+
+    def get_order_number(self):
+        """
+        :return: Returns order number for the order
+        """
+        return self._order_number
