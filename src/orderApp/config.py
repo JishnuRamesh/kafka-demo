@@ -5,7 +5,7 @@ class Config:
 
     def __init__(self):
         self._registry_url = "http://localhost:8081"
-        self._kafka_url = "http://localhost:9092"
+        self._kafka_url = "PLAINTEXT://localhost:9092"
         self._topic_mapper = {"orders": "rawevents.orders.v1"}
         self._consumer_group_id = "order_app_consumer_group"
 

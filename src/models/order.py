@@ -18,7 +18,7 @@ class Order:
         """
         return {**self._customer.as_dict(),
                 "order_number": self._order_number,
-                "date_od_delivery": str(self._date_of_delivery),
+                "date_of_delivery": str(self._date_of_delivery),
                 "price": self._price,
                 "currency": self._currency
                 }

@@ -12,9 +12,8 @@ def produce_orders_to_kafka(number_of_orders: int):
     """
 
     random_orders = RandomOrderGenerator(number_of_orders)
-    #producer = OrderAppProducer()
+    producer = OrderAppProducer()
 
     for order in random_orders:
-        print(order.as_dict())
-        #producer.produce_kafka_message(order.as_dict(), str(order.get_order_number()), "orders")
+        producer.produce_kafka_message(order.as_dict(), str(order.get_order_number()), "orders")
 
