@@ -16,7 +16,7 @@ fi
 # ADD your schemas here:
 
 # Order schema
-schema=$(tr <./dev/order-data.avro.json '\n' ' ' | sed -e 's/"/\\\"/g')
+schema=$(tr <./dev/order.avro.json '\n' ' ' | sed -e 's/"/\\\"/g')
 topic="rawevents.orders.v1"
 curl -X POST -H "Content-Type: application/vnd.schemaregistry.v1+json" --data '{"schema":"'"$schema"'"}' "http://$host:$port/subjects/$topic-value/versions"
 
