@@ -9,9 +9,6 @@ class OrderAppConsumer:
     _instance = None
     _config = Config()
 
-    def __init__(self):
-        raise NotImplementedError("Please call instance()")
-
     @classmethod
     def instance(cls):
         if not cls._instance:
