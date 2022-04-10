@@ -3,9 +3,9 @@ from struct import unpack
 
 from confluent_kafka import Consumer
 from fastavro import schemaless_reader
-from kafka.schemaClient.schema_client import SchemaClient
+from src.kafka.schemaClient.schema_client import SchemaClient
 
-from exceptions.kafka_exceptions import (
+from src.exceptions.kafka_exceptions import (
     KafkaDeserializationError,
     KafkaError,
     KafkaMessageError,
@@ -20,9 +20,9 @@ class KafkaConsumer:
         self,
         schema_client: SchemaClient,
         topics: List[str],
-        consumer_conf: Dict[str],
+        consumer_conf: Dict[str, str],
         exception_handler: Callable,
-        msg_processor: Callable,
+        msg_processor: object,
     ):
         self._schema_client = schema_client
         self._topics = topics
@@ -111,7 +111,7 @@ class KafkaConsumer:
                 try:
                     # Give deserialized message to message processor
                     self._msg_processor.process_msg(
-                        deserialized_message, topic_name, schema_id, schema_name
+                        deserialized_message, schema_name
                     )
                 except Exception as ex:
                     self._exception_handler(

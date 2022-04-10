@@ -7,6 +7,7 @@ class Config:
         self._registry_url = "http://localhost:8081"
         self._kafka_url = "PLAINTEXT://localhost:9092"
         self._topic_mapper = {"orders": "rawevents.orders.v1"}
+        self._topics = ["rawevents.orders.v1"]
         self._consumer_group_id = "order_app_consumer_group"
 
     def get_schema_registry_config(self) -> Dict[str, str]:
@@ -33,12 +34,12 @@ class Config:
         """
         return self._topic_mapper[topic]
 
-    def get_topics(self):
+    def get_topics(self) -> List[str]:
         """
             Return list of topics supported
         :return: List of topics
         """
-        return self._topic_mapper.keys()
+        return self._topics
 
     def get_consumer_kafka_conf(self) -> Dict[str, str]:
         """

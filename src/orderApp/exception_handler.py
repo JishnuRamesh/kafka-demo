@@ -1,4 +1,4 @@
-from exceptions.kafka_exceptions import KafkaError
+from src.exceptions.kafka_exceptions import KafkaError
 
 
 def kafka_consumer_exception_handler(ex: KafkaError):

@@ -1,5 +1,5 @@
-from kafka.schemaClient.schema_client import SchemaClient
-from kafka.consumer.kafka_cosumer import KafkaConsumer
+from src.kafka.schemaClient.schema_client import SchemaClient
+from src.kafka.consumer.kafka_cosumer import KafkaConsumer
 from src.orderApp.config import Config
 from src.orderApp.exception_handler import kafka_consumer_exception_handler
 from src.orderApp.OrderAppMessageProcessor import OrderAppMessageProcessor
@@ -21,7 +21,7 @@ class OrderAppConsumer:
                 cls._config.get_topics(),
                 cls._config.get_consumer_kafka_conf(),
                 kafka_consumer_exception_handler,
-                OrderAppMessageProcessor,
+                OrderAppMessageProcessor(),
             )
 
         return cls._instance
