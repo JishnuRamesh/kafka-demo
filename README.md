@@ -3,7 +3,7 @@
 Project used for demo and training on how to use Kafka with Python. 
 Project provides a kafka producer and a kafka consumer and required docker compose to run the kafka infra on your local machine.
 
-The demo producer produces fake consumer order data to the `orders` kafka topic which can be consumed by the consumer.
+The demo producer produces fake consumer order data to the `orders` kafka topic which can be consumed by the consumer. The data is produced by Faker library.
 
 Demo payload for customer order
 
