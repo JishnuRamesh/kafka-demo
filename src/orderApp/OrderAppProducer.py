@@ -1,5 +1,5 @@
-from kafka.schemaClient.schema_client import SchemaClient
-from kafka.producer.kafka_producer import KafkaProducer
+from src.kafka.schemaClient.schema_client import SchemaClient
+from src.kafka.producer.kafka_producer import KafkaProducer
 from src.orderApp.config import Config
 
 

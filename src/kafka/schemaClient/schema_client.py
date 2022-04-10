@@ -18,7 +18,7 @@ class SchemaClient:
         """
         return self._client.get_schema(schema_id).schema_str
 
-    def get_schema_dict(self, schema_id: int) -> Dict[Any]:
+    def get_schema_dict(self, schema_id: int):
         """
             Get schema as a python dict
         :param schema_id: ID of the schema

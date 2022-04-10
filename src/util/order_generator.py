@@ -1,7 +1,7 @@
 import random
 
 from faker import Faker
-from models.order import Order, Customer
+from src.models.order import Order, Customer
 
 
 class RandomOrderGenerator:

@@ -2,9 +2,9 @@ import io
 
 from confluent_kafka import Producer
 from fastavro import schemaless_writer
-from kafka.schemaClient.schema_client import SchemaClient
+from src.kafka.schemaClient.schema_client import SchemaClient
 
-from exceptions.kafka_exceptions import KafkaEncodeMsgError, KafkaProduceError
+from src.exceptions.kafka_exceptions import KafkaEncodeMsgError, KafkaProduceError
 
 
 class KafkaProducer:
