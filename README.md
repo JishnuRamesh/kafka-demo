@@ -35,7 +35,7 @@ Demo payload for customer order
 1. Create a virtual env and activate it.
 
    ```
-      pyenv install 3.9.1 pyenv  
+      pyenv install 3.9.1  
       pyenv virtualenv 3.9.1 kafka-demo  
       pyenv activate kafka-demo
    ```
